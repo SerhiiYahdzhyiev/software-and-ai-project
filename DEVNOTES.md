@@ -45,9 +45,12 @@ nice popover with analysis summary
 
 ### AI Agents Development
 
-[Overview Blog Post about AI Agents](https://github.blog/ai-and-ml/generative-ai/what-are-ai-agents-and-why-do-they-matter/)
-[Examples of AI Agents on GitHub](https://github.com/e2b-dev/awesome-ai-agents)
-[Clippy](https://github.com/ennucore/clippinator)
+- [ ] [Overview Blog Post about AI Agents](https://github.blog/ai-and-ml/generative-ai/what-are-ai-agents-and-why-do-they-matter/)
+- [ ] [Same kinda stuff but from AWS](https://aws.amazon.com/what-is/ai-agents/)
+- [ ] [Probaly also worth cheking out](https://www.scientificamerican.com/article/what-are-ai-agents-and-why-are-they-about-to-be-everywhere/)
+
+- [Examples of AI Agents on GitHub](https://github.com/e2b-dev/awesome-ai-agents)
+- [Clippy](https://github.com/ennucore/clippinator)
 
 After some initial glance at what are AI Agents, I'm not still sure that it is
 the right tool/approach for this project. A simple "proxy" server talking to 

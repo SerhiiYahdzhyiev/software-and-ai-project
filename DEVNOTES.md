@@ -55,3 +55,20 @@ nice popover with analysis summary
 After some initial glance at what are AI Agents, I'm not still sure that it is
 the right tool/approach for this project. A simple "proxy" server talking to 
 some LLM API could be sufficient.
+
+- [ ] Deno 2 General Research
+- [ ] How to write REST APIs in Deno 2
+
+
+## Stack
+
+1. Extension
+
+    - Plain js, no typescript
+    - Manifest v3
+    - Custom fetch wrappers, no extra libs for http requests
+
+2. Backend (Server Part)
+
+    - Try Deno 2 as runtime
+    - Keep Auth mechanism as simple as possible

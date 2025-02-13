@@ -30,8 +30,8 @@ nice popover with analysis summary
                 - Functions
                 - Variables
                 - Classes/objects
-                - Common Data Structures
-                - Common Algorithms
+        - Common Data Structures
+        - Common Algorithms
         - Found bugs count
         - Benchmarks:
             - Coding standards adherance rates

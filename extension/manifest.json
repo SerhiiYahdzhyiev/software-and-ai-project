@@ -19,7 +19,10 @@
       ]
     }
   ],
-  "permissions": [],
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
   "host_permissions": [
     "https://*/*",
     "http://*/*"

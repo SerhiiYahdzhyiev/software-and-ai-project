@@ -11,7 +11,7 @@ project for GISMA University of Applied Sciences, module - *Software and AI
 CodeGlass is an AI Powered code snippet analyzer browser extension. It tracks
 user highlighting of text on web pages, and if the highlighted text is a
 programming code of any sort displays a usefull summary in a
-[popover element]().
+[popover element](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover).
 
 The main purpose of CodeGlass is to contribute to a more informed decisions
 during development and/or research.

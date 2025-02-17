@@ -21,6 +21,7 @@ during development and/or research.
 1. [Prerequisites](#prerequisites)
 2. [Setup and Installation](#setup-and-installation)
 3. [Usage](#usage)
+4. [Report](#report)
 
 ### Prerequisites
 
@@ -59,5 +60,9 @@ In summary the steps are:
 ##### Run the Server
 
 ### Usage
+
+*TODO: Write this subsection*
+
+### Report
 
 *TODO: Write this subsection*

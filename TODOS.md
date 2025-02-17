@@ -11,6 +11,8 @@
 - [ ] Add core issues to the repo (?)
     - [ ] Prep the repo (labels, issue templates etc.)
 
+- [ ] Finalize README.
+
 ## Medium
 
 - [ ] Set up github project ?

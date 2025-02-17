@@ -12,6 +12,7 @@
   "content_scripts": [
     {
       "run_at" : "document_start",
+      "css": ["css/index.css"],
       "js": [
         "constants.js",
         "content.js"

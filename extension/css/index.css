@@ -1,0 +1,24 @@
+.cg_popover_container {
+    display: flex;
+
+    /* TODO: Remove/refine mocks*/
+    min-width: 300px;
+    min-height: 200px;
+
+    position: absolute;
+
+    background: white;
+
+    font-family: sans-serif;
+
+    border: 1px solid e4e4e4;
+    border-radius: 12px;
+
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+
+    z-index: 1000000;
+}
+
+.cg_popover_container [aria-label='Close'] {
+    cursor: pointer;
+}

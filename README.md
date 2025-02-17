@@ -29,8 +29,7 @@ during development and/or research.
    - [Chrome](https://www.google.com/intl/de/chrome/)
    - [Chromium](https://www.chromium.org/getting-involved/download-chromium/)
 
-2. A [Javascript Runtime](https://www.freecodecamp.org/news/javascript-engine-and-runtime-explained/):
-   I suggest [Deno](https://deno.com/) but feel free to chose your favourite.
+2. [Node.js](https://nodejs.org) 
 
 ### Setup and Installation
 
@@ -49,9 +48,23 @@ In summary the steps are:
 2. Enable `Developer Mode`.
 3. Drag and Drop the `extension` sub-directory onto the extensions page.
 
-#### Run the Application Server
+#### Set up and Run the Application Server
 
-*TODO: Write this subsection*
+1. Navigate to `server` subdirectory.
+2. Install dependencies with your node package manager.
+
+   *Example for `npm`:*
+
+   ```bash
+   npm install
+   ```
+3. Prepare your `.env` file.
+
+   *Example: Create from `example` file with default values*
+
+   ```bash
+   cp .env.example .env
+   ```
 
 ##### Set up the Adapter
 
@@ -65,4 +78,19 @@ In summary the steps are:
 
 ### Report
 
-*TODO: Write this subsection*
+This repository also holds source of the project report written for the
+university submission. If you want you can use it as a additional documentation.
+
+#### Prerequisites
+
+   - [LaTeX Distribution](https://tex.stackexchange.com/questions/239199/latex-distributions-what-are-their-main-differences)
+
+   - [Make](https://www.gnu.org/software/make/)
+
+#### Build
+
+1. Navigate to the `report` subdirectory.
+2. Run `make`.
+3. Run `make bib`.
+4. Run `make` again.
+5. Inspect the `main.pdf`.

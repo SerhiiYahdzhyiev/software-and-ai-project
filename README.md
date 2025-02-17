@@ -27,7 +27,6 @@ during development and/or research.
 1. A Web Extensions API compatible browser:
    - [Chrome](https://www.google.com/intl/de/chrome/)
    - [Chromium](https://www.chromium.org/getting-involved/download-chromium/)
-   - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 
 2. A [Javascript Runtime](https://www.freecodecamp.org/news/javascript-engine-and-runtime-explained/):
    I suggest [Deno](https://deno.com/) but feel free to chose your favourite.

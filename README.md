@@ -35,7 +35,18 @@ during development and/or research.
 
 #### Install the Extension
 
-*TODO: Write this subsection*
+All the sources for browser extension are inside `extension` sub-directory.
+
+Depending on your browser the flow of installation may differ.
+
+But for most Chromium based browsers [this guide](https://www.ssl2buy.com/wiki/how-to-manually-install-a-chrome-extension-in-2-ways)
+covers the process fairly well.
+
+In summary the steps are:
+
+1. Navigate to `chrome://extensions` page.
+2. Enable `Developer Mode`.
+3. Drag and Drop the `extension` sub-directory onto the extensions page.
 
 #### Run the Application Server
 
@@ -50,4 +61,3 @@ during development and/or research.
 ### Usage
 
 *TODO: Write this subsection*
-

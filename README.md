@@ -20,7 +20,7 @@ during development and/or research.
 
 1. [Prerequisites](#prerequisites)
 2. [Setup and Installation](#setup-and-installation)
-2. [Usage](#usage)
+3. [Usage](#usage)
 
 ### Prerequisites
 

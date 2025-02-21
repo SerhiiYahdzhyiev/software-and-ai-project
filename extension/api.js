@@ -28,8 +28,8 @@ async function test() {
 }
 
 async function isCode(str) {
-    // TODO: Realize
-    return true;
+    const data = await request("/isCode", str);
+    return data.isCode;
 }
 
 async function getPopoverInfo(code) {

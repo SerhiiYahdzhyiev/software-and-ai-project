@@ -17,8 +17,18 @@ for (const k of requiredEnvs) {
 
 const app = express();
 
-app.get("/", (_, res) => {
-    res.send("Hello World!");
+app.use(express.text());
+
+app.use((req, res, next) => {
+    if (req.headers?.authorization === "Bearer " + process.env.SECRET) {
+        next();
+    }
+    res.status(401);
+    res.send();
+});
+
+app.post("/echo", (req, res) => {
+    res.json({payload: req.body});
 });
 
 app.listen(process.env.PORT, () => {

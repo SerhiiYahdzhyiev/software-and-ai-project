@@ -4,7 +4,8 @@
   "description": "Analyse highlighted code fragments.",
   "version": "0.0.1",
   "action": {
-    "default_title": "CodeGlass"
+    "default_title": "CodeGlass",
+    "default_popup": "pages/popup.html"
   },
   "background": {
       "service_worker": "background.js"
@@ -25,7 +26,8 @@
   ],
   "permissions": [
     "tabs",
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "host_permissions": [
     "https://*/*",

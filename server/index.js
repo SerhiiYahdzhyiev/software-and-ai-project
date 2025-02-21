@@ -6,6 +6,7 @@ config();
 const requiredEnvs = [
     "PORT",
     "HOST",
+    "SECRET",
 ];
 
 for (const k of requiredEnvs) {

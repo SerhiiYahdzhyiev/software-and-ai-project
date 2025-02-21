@@ -31,6 +31,13 @@ app.post("/echo", (req, res) => {
     res.json({payload: req.body});
 });
 
+app.post("/isCode", (req, res) => {
+    console.log(req.body);
+    // TODO: Realize
+    const isCode = false;
+    res.json({isCode});
+});
+
 app.listen(process.env.PORT, () => {
     console.log(`[${process.env.HOST}:${process.env.PORT}]`,"Server is listening!");
 })

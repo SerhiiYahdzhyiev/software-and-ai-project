@@ -1,8 +1,6 @@
 importScripts("./api.js");
 
 (async () => {
-    const res = await test();
-    console.log(res);
     chrome.runtime.onMessage.addListener(async (message, sender) => {
         console.log(message, sender);
         try {

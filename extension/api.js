@@ -22,11 +22,6 @@ async function request(path, payload) {
     return data;
 }
 
-async function test() {
-    const result = await request("/echo", "Hello!");
-    console.log(result);
-}
-
 async function isCode(str) {
     const data = await request("/isCode", str);
     return data.isCode;

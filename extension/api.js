@@ -28,10 +28,6 @@ async function isCode(str) {
 }
 
 async function getPopoverInfo(code) {
-    // TODO: Realize
-    return {
-        general: {
-            language: "C"
-        }
-    }
+    const data = await request("/info", code);
+    return data;
 }

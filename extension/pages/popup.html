@@ -5,20 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeGlass Popup</title>
     <style>
-        body {
-            width: 200px;
-            padding: 10px;
-            text-align: center;
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
+            margin: 0;
         }
-        button {
-            padding: 8px;
-            cursor: pointer;
+        body {
+            width: 300px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        header, footer {
+            display: flex;
+            width: 100%;
+            padding: 16px;
+        }
+        main {
+            display: flex;
+            padding-inline: 16px;
+            flex-direction: column;
+            align-items: flex-start;
         }
     </style>
 </head>
 <body>
-    <input type="text" id="secret"/>
+    <header>
+        <h1>CodeGlass Settings</h1>
+    </header>
+    <main>
+        <input type="text" id="secret" disabled/>
+    </main>
+    <footer>
+        <button id="edit">Edit</button>
+        <button id="save">Save</button>
+    </footer>
     <script src="../popup.js"></script>
 </body>
 </html>

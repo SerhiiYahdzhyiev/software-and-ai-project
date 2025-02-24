@@ -22,6 +22,7 @@ app.use(express.text());
 app.use((req, res, next) => {
     if (req.headers?.authorization === "Bearer " + process.env.SECRET) {
         next();
+        return;
     }
     res.status(401);
     res.send();

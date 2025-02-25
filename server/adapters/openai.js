@@ -8,7 +8,13 @@ class OpenAICGAdapter {
     async getSnippetInfo(code) {
         console.log(code);
         // TODO: Realize...
-        return {general:{language: "C"}}
+        return {
+            general:{
+                language: "C",
+                potentialBugsCount: 14,
+                knownBugsCount: 0,
+            },
+        }
     }
 } 
 

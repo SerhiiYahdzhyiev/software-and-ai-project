@@ -32,10 +32,6 @@ app.use((req, res, next) => {
     res.send();
 });
 
-app.post("/echo", (req, res) => {
-    res.json({payload: req.body});
-});
-
 app.post("/isCode", async (req, res) => {
     const isCode = await adapter.isCode(req.body);
     res.json({isCode});

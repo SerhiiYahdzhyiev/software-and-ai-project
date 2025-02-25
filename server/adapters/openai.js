@@ -1,12 +1,13 @@
 class OpenAICGAdapter {
     async isCode(text) {
         console.log(text);
-        // TODO: Reallize...
+        // TODO: Realize...
         return true;
     }
 
     async getSnippetInfo(code) {
         console.log(code);
+        // TODO: Realize...
         return {general:{language: "C"}}
     }
 } 

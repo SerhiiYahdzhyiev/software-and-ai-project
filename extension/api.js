@@ -3,6 +3,7 @@ const HEADERS = {
 }
 
 async function request(path, payload) {
+    // TODO: Make this configurable through popup...
     const base = "http://localhost:4242"
     const secret = (await chrome.storage.local.get())["SECRET"];
     const response = await fetch(base + path, {

@@ -5,6 +5,7 @@ editBtn.addEventListener("click", handleEdit);
 saveBtn.addEventListener("click", handleSave);
 
 async function handleSave(e) {
+    // TODO: Refactor ?
     Array.from(document.querySelectorAll("footer button"))
         .forEach((button) => button.disabled = false);
     Array.from(document.querySelectorAll("input"))
@@ -17,6 +18,7 @@ async function handleSave(e) {
 }
 
 function handleEdit(e) {
+    // TODO: Refactor ?
     Array.from(document.querySelectorAll("footer button"))
         .forEach((button) => button.disabled = false);
     Array.from(document.querySelectorAll("input"))

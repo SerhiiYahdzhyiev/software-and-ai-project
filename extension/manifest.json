@@ -16,6 +16,7 @@
       "css": ["css/index.css"],
       "js": [
         "constants.js",
+        "popover.js",
         "content.js"
       ],
       "matches": [

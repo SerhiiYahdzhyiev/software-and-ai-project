@@ -1,5 +1,6 @@
 .cg_popover_container {
     display: flex;
+    color: black;
 
     /* TODO: Remove/refine mocks*/
     min-width: 300px;

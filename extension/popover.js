@@ -1,7 +1,29 @@
+const CG_CLOSE_ID = "cgclose";
+
+const CG_CLOSE_HTML = `
+<span role="button" aria-label="Close" id="${CG_CLOSE_ID}">x</span>
+`;
+
+function px(num) {
+    return num + "px"
+}
+
 function renderPopover(info) {
+    const position = getPopoverPosition();
     const element = createPopoverElement(info);
 
+    const {height: popoverHeight} = element.getBoundingClientRect();
+
+    element.style.left = px(position.x);
+    element.style.top = px(popoverHeight + position.y)
+
     document.body.appendChild(element);
+
+    const close = document.getElementById(CG_CLOSE_ID);
+    close.addEventListener("click", (e) => {
+        console.log(e);
+        if (e.target === close) destroyPopover();
+    });
 }
 
 function destroyPopover() {
@@ -11,28 +33,13 @@ function destroyPopover() {
 }
 
 function createPopoverElement() {
-    const position = getPopoverPosition();
-    console.log(position);
-
-    const close = document.createElement("span")
     const el = document.createElement("div");
 
-    close.role = "button"
-    close.ariaLabel = "Close"
-    close.textContent = "x"
-
-    close.addEventListener("click", (e) => {
-        console.log(e);
-        if (e.target === close) destroyPopover();
-    });
+    el.innerHTML = `
+        ${CG_CLOSE_HTML}
+    `;
 
     el.classList.add(CG_POPOVER_CONTAINER_CLASS);
-
-    el.style.left = position.x + "px";
-    el.style.top = el.getBoundingClientRect().height + position.y + "px";
-
-    el.appendChild(close);
-
     return el;
 }
 
@@ -40,8 +47,6 @@ function getPopoverPosition() {
     const selection = window.getSelection();
 
     const rect = selection.anchorNode.parentElement.getBoundingClientRect();
-    console.log(rect);
-
     const x = rect.x + window.scrollX;
     const y = rect.y 
         + window.scrollY

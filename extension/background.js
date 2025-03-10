@@ -1,4 +1,5 @@
-importScripts("./api.js");
+import {isCode} from "./api/is-code.js";
+import {getPopoverInfo} from "./api/get-popover-info.js";
 
 (async () => {
     chrome.runtime.onMessage.addListener(async (message, sender) => {

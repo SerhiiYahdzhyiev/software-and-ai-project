@@ -1,11 +1,11 @@
-const HEADERS = {
-    "Content-Type": "text/plain"
-}
+import {HEADERS} from "./constants.js"
 
-async function request(path, payload) {
+import { getSecret } from "../storage/get-secret.js";
+
+export async function request(path, payload) {
     // TODO: Make this configurable through popup...
     const base = "http://localhost:4242"
-    const secret = (await chrome.storage.local.get())["SECRET"];
+    const secret = await getSecret();
     const response = await fetch(base + path, {
         method: "POST",
         body: payload,
@@ -16,19 +16,10 @@ async function request(path, payload) {
     });
 
     if (response.status !== 200) {
+        console.error(response);
         throw new Error(response.statusText);
     }
 
     const data = await response.json();
-    return data;
-}
-
-async function isCode(str) {
-    const data = await request("/isCode", str);
-    return data.isCode;
-}
-
-async function getPopoverInfo(code) {
-    const data = await request("/info", code);
     return data;
 }

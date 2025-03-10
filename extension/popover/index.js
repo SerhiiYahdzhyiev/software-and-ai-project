@@ -11,7 +11,6 @@ function renderPopover(info) {
 
     const close = document.getElementById(CG_CLOSE_ID);
     close.addEventListener("click", (e) => {
-        console.log(e);
         if (e.target === close) destroyPopover();
     });
 }

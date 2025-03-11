@@ -9,6 +9,7 @@ chrome.runtime.onMessage.addListener(async (message, _, sendResponse) => {
 
 document.addEventListener("mouseup", () => {
     const selection = window.getSelection();
+    console.log(selection);
     if (selection.toString().trim()) {
         destroyPopover();
         chrome.runtime.sendMessage({

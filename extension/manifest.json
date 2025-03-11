@@ -16,7 +16,6 @@
       "run_at" : "document_start",
       "css": ["css/index.css"],
       "js": [
-        "constants.js",
         "popover/constants.js",
         "popover/utils.js",
         "popover/index.js",

@@ -2,7 +2,7 @@ function renderPopover(info) {
     const position = getPopoverPosition();
     const element = createPopoverElement(info);
 
-    const {height: popoverHeight} = element.getBoundingClientRect();
+    const popoverHeight = getPopoverHeight(element);
 
     element.style.left = px(position.x);
     element.style.top = px(popoverHeight + position.y)
@@ -10,22 +10,29 @@ function renderPopover(info) {
     document.body.appendChild(element);
 
     const close = document.getElementById(CG_CLOSE_ID);
-    close.addEventListener("click", (e) => {
+    const handleClose = (e) => {
         if (e.target === close) destroyPopover();
-    });
+    }
+    close.addEventListener("click", handleClose);
+}
+
+function getPopoverHeight(element) {
+    const {height} = element.getBoundingClientRect();
+    return height;
 }
 
 function destroyPopover() {
-    const popover = document.querySelector("." + CG_POPOVER_CONTAINER_CLASS);
+    const popover = document.querySelector(cssClass(CG_POPOVER_CONTAINER_CLASS));
     if (popover)
         document.body.removeChild(popover);
 }
 
-function createPopoverElement() {
+function createPopoverElement(info) {
     const el = document.createElement("div");
 
     el.innerHTML = `
         ${CG_CLOSE_HTML}
+        ${renderGeneral(info.general)}
     `;
 
     el.classList.add(CG_POPOVER_CONTAINER_CLASS);
@@ -44,3 +51,24 @@ function getPopoverPosition() {
 
     return {x, y};
 }
+
+function renderGeneral(general) {
+    let html = "";
+    for (const key of Object.keys(general)) {
+        // TODO: Is it really needed here since we can expect no
+        //       nested objects from backend
+        if (typeof general[key] === "object") {
+            html += renderGeneral(general[key])
+        } else {
+            html += `
+            <div class="${CG_ROW_CLASS}">
+                <h4 class="${CG_TITLE_CLASS}">${camelToTitle(key)}</h4>
+                <p class="${CG_VALUE_CLASS}">${general[key]}</p>
+            </div>
+            `;
+        }
+    }
+
+    return html;
+}
+

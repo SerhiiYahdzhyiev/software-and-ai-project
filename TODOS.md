@@ -2,16 +2,16 @@
 
 ## High
 
-- [x] Draw High Level Diagram for the project
-- [ ] Draw Low Level Diagram for the project
-- [x] Set up boilerplate for browser extension
-- [x] Set up boilerplate for backend/server part
-- [x] Further read/research on AI Agents topic
+- [ ] Fix potential bug related to rerendering of popover on selecting the
+      text inside of it.
 
-- [ ] Finalize README.
+- [ ] Realize minimal adapter (actually connect ot an AI part).
+
 
 ## Medium
 
+- [ ] Write report
+- [ ] Finalize README.
 - [ ] Set up github project ?
 
 
@@ -21,6 +21,16 @@
 - [ ] Add core issues to the repo (?)
     - [ ] Prep the repo (labels, issue templates etc.)
 
+## Even Lower
+
+- [ ] Draw Low Level Diagram for the project
+
+
 ## Closed
 
 - [x] Add priorities to TODOs
+- [x] Set up boilerplate for browser extension
+- [x] Set up boilerplate for backend/server part
+- [x] Further read/research on AI Agents topic
+
+ [x] Draw High Level Diagram for the project

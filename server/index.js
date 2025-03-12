@@ -33,13 +33,27 @@ app.use((req, res, next) => {
 });
 
 app.post("/isCode", async (req, res) => {
-    const isCode = await adapter.isCode(req.body);
-    res.json({isCode});
+    try {
+        const isCode = await adapter.isCode(req.body);
+        res.json({isCode});
+    } catch (error) {
+        console.error(error);
+        // TODO: Improve handling...
+        res.status(500);
+        res.json({ error: String(error)});
+    }
 });
 
 app.post("/info", async (req, res) => {
-    const info = await adapter.getSnippetInfo(req.body);
-    res.json(info);
+    try {
+        const info = await adapter.getSnippetInfo(req.body);
+        res.json(info);
+    } catch (error) {
+        console.error(error);
+        // TODO: Improve handling...
+        res.status(500);
+        res.json({ error: String(error)});
+    }
 });
 
 app.listen(process.env.PORT, () => {

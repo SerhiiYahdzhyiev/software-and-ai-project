@@ -19,7 +19,10 @@ for (const k of requiredEnvs) {
 }
 
 const app = express();
-const adapter = new Adapter();
+const adapter = new Adapter({
+    model: "gpt-4o",
+    maxAttempts: 2,
+});
 
 app.use(express.text());
 

@@ -1,4 +1,4 @@
-xport class Adapter {
+export class Adapter {
     isCodeSchema = '{ "isCode": boolean }'
     constructor(client, options) {
         this.client = client

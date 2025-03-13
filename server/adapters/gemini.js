@@ -12,6 +12,6 @@ const _model = _client.getGenerativeModel({ model: "gemini-2.0-flash"});
 export const client = { 
     async getResponse(prompt) {
         const res = await _model.generateContent(prompt);
-        return res.response.text;
+        return res.response.text();
     }
 }

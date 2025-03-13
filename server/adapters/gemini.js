@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 config();
 
@@ -10,7 +10,7 @@ const _client = new GoogleGenerativeAI(key);
 const _model = _client.getGenerativeModel({ model: "gemini-2.0-flash"});
 
 export const client = { 
-    async getModelResponse(prompt) {
+    async getResponse(prompt) {
         const res = await _model.generateContent(prompt);
         return res.response.text;
     }

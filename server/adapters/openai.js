@@ -7,7 +7,7 @@ config();
 const _client = new OpenAI()
 
 export const client = { 
-    async getModelResponse(prompt) {
+    async getResponse(prompt) {
         const completion = await _client.chat.completions.create({
             model: "gpt-3.5-turbo",
             message: [{

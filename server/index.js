@@ -1,7 +1,7 @@
 import {config} from "dotenv";
 import express from "express";
 
-import {client} from "./adapters/openai.js"
+import {client} from "./adapters/gemini.js"
 import {Adapter} from "./adapters/base.js";
 
 config();

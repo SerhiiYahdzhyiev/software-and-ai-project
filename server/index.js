@@ -1,8 +1,8 @@
 import {config} from "dotenv";
 import express from "express";
 
-import Adapter from "./adapters/openai.js";
-
+import {client} from "./adapters/openai.js"
+import {Adapter} from "./adapters/base.js";
 
 config();
 
@@ -19,8 +19,7 @@ for (const k of requiredEnvs) {
 }
 
 const app = express();
-const adapter = new Adapter({
-    model: "gpt-4o",
+const adapter = new Adapter(client, {
     maxAttempts: 2,
 });
 

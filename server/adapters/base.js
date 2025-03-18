@@ -1,8 +1,29 @@
 export class Adapter {
-    isCodeSchema = '{ "isCode": boolean }'
+    isCodeSchema = '{ "isCode": boolean }';
+    generalSchema = `{
+        "language": string,
+        "potentialBugsCount": number,
+        "knownBugsCount": number,
+    }
+    `;
+
     constructor(client, options) {
         this.client = client
         this.maxAttempts = options.maxAttempts;
+    }
+
+    getGeneralPrompt(text) {
+        return `
+        Give the summary of the provided code snippet, identify the programming
+        or markup language, count potential bugs, count known bugs.
+
+        Give your answer in the valid json format with the following schema:
+        ${this.generalSchema}
+
+        ---
+        ${text}
+        ---
+        `;
     }
 
     getIsCodePrompt(text) {
@@ -42,20 +63,12 @@ export class Adapter {
     async isCode(text) {
         const prompt = this.getIsCodePrompt(text);
         const {isCode} = await this.getResponse(prompt);
-
-        console.log(isCode);
         return isCode;
     }
 
     async getSnippetInfo(code) {
-        console.log(code);
-        // TODO: Realize...
-        return {
-            general:{
-                language: "C",
-                potentialBugsCount: 14,
-                knownBugsCount: 0,
-            },
-        }
+        const prompt = this.getGeneralPrompt(code);
+        const general = await this.getResponse(prompt);
+        return {general};
     }
 } 

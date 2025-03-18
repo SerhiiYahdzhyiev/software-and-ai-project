@@ -1,7 +1,7 @@
 import {config} from "dotenv";
 import express from "express";
 
-import {client} from "./adapters/gemini.js"
+import {client} from "./adapters/mock.js"
 import {Adapter} from "./adapters/base.js";
 
 config();
@@ -20,6 +20,8 @@ for (const k of requiredEnvs) {
 
 const app = express();
 const adapter = new Adapter(client, {
+    // TODO: Realize mechanism to recieve setting object with the request
+    //       from extension.
     maxAttempts: 2,
 });
 

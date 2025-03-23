@@ -2,33 +2,31 @@
 
 In modern software development, code reuse is a widely accepted practice that
 allows developers to save time, reduce redundancy, and leverage existing solutions.
-However, integrating third-party code snippets or libraries into projects is not
-without risks. Issues such as hidden bugs, security vulnerabilities, and
-performance inefficiencies can significantly impact the stability and
-maintainability of software. Identifying these issues often requires extensive
-manual review and analysis, which can be time-consuming and resource-intensive.
+However, integrating third-party code snippets or libraries into projects introduces 
+risks, such as hidden bugs, security vulnerabilities, and
+performance inefficiencies, which can significantly impact the stability and
+maintainability of software. Identifying those issues often requires extensive
+manual reviews, analysis and/or researches.Those can be time-consuming and
+resource-intensive.
 
-With the advent of Large Language Models (LLMs) and their rapid advancements in
-understanding and generating human-like text, it becomes possible to automate
-aspects of code analysis and summarization. This project proposes a browser
-extension powered by artificial intelligence to assist developers in assessing
-and understanding code snippets they encounter while browsing the web. By
+With the advent of Large Language Models and their rapid advancements in
+understanding and generating human-like text, it has become possible to automate
+aspects of initial code analysis and summarization. This project proposes to
+assist developers in assessing and understanding code snippets (or even bigger
+code parts if needed) that they encounter while doing research on the web. By
 leveraging the Web Extensions API \autocite{CFD} and integrating LLM-based
-processing, the extension provides real-time insights into code quality,
+processing, the project provides real-time insights into code quality,
 potential errors, and optimization suggestions.
 
 A key feature of this solution is its modularity. The extension itself handles
-the UI and workflow, while the AI processing is delegated to a locally hosted
-Express.js server. This server acts as an intermediary, encapsulating the core
-logic of code analysis while allowing users to choose and configure their
-preferred LLM adapters. This approach ensures flexibility, enabling developers
-to tailor the tool to their specific needs and seamlessly integrate different
-AI models without modifying the core extension logic.
+the UI and workflow, while the AI processing is delegated to a small locally hosted
+server, which acts as an intermediary, encapsulating the core
+logic and flow of code analysis whiles allowing users to choose and configure their
+preferred LLMs. This approach ensures flexibility, enabling developers
+to tailor the tool to their specific needs and integrate different
+AI models without need for modifying the core logic.
 
 By embedding AI-powered code analysis directly into the web browsing experience,
-this project aims to enhance the efficiency of software development and research
-processes. Developers can receive immediate feedback on code snippets they
-encounter, reducing the need for exhaustive manual reviews and enabling a more
-informed approach to code reuse. The following sections detail the
-implementation, architecture, and evaluation of the proposed system, along with
-a discussion on its advantages and potential limitations.
+CodeGlass aims to enhance the efficiency of software development and research
+processes. Developers can receive nearly immediate feedback on code parts that
+need analysis, enabling a more informed approach to code reuse.

@@ -1,8 +1,22 @@
 const editBtn = document.getElementById("edit");
 const saveBtn = document.getElementById("save");
+const activeInput = document.getElementById("active");
 
 editBtn.addEventListener("click", handleEdit);
 saveBtn.addEventListener("click", handleSave);
+activeInput.addEventListener("change", handleChange);
+
+chrome.runtime.sendMessage({action: "getActive"}).then(
+    (active) => {
+        activeInput.checked = active;
+    }
+);
+
+async function handleChange(e) {
+    await chrome.runtime.sendMessage(
+        {action: "setActive", active: e.target.checked}
+    );
+}
 
 async function handleSave(e) {
     // TODO: Refactor ?

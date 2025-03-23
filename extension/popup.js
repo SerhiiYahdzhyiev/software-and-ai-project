@@ -22,7 +22,7 @@ async function handleSave(e) {
     // TODO: Refactor ?
     Array.from(document.querySelectorAll("footer button"))
         .forEach((button) => button.disabled = false);
-    Array.from(document.querySelectorAll("input"))
+    Array.from(document.querySelectorAll("input[type='text']"))
         .forEach((input) => input.disabled = true);
 
     const input = document.getElementById("secret");
@@ -35,7 +35,7 @@ function handleEdit(e) {
     // TODO: Refactor ?
     Array.from(document.querySelectorAll("footer button"))
         .forEach((button) => button.disabled = false);
-    Array.from(document.querySelectorAll("input"))
+    Array.from(document.querySelectorAll("input[type='text']"))
         .forEach((input) => input.disabled = false);
 
     e.target.disabled = true;
@@ -50,5 +50,3 @@ chrome.storage.local.get().then(storage => {
     const input = document.getElementById("secret");
     input.value = secretValue;
 });
-
-

@@ -1,8 +1,8 @@
 import {config} from "dotenv";
 import express from "express";
 
-import {client} from "./adapters/mock.js"
-import {Adapter} from "./adapters/base.js";
+import {client} from "./adapter/clients/mock.js"
+import {Adapter} from "./adapter/base.js";
 
 config();
 

@@ -10,7 +10,7 @@ project for GISMA University of Applied Sciences, module - *Software and AI
 
 CodeGlass is an AI Powered code snippet analyzer browser extension. It tracks
 user highlighting of text on web pages, and if the highlighted text is a
-programming code of any sort displays a usefull summary in a
+programming code of any sort displays a useful summary in a
 [popover element](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover).
 
 The main purpose of CodeGlass is to contribute to a more informed decisions
@@ -71,7 +71,7 @@ In summary the steps are:
    You can choose an adapter. Currently available:
       - Gemini (Google) - `./server/adapter/clients/gemini.js`
       - ChatGPT (OpenAI) - `./server/adapter/clients/openai.js`
-      - Mock (Returns harcoded values, primarily for testing) - `./server/adapter/clients/mock.js`
+      - Mock (Returns hard-coded values, primarily for testing) - `./server/adapter/clients/mock.js`
 
    To set an adapter client you need to change the following line in `./server/index.js`:
 
@@ -90,7 +90,14 @@ In summary the steps are:
 
 ### Usage
 
-*TODO: Write this subsection*
+1. Pin extension icon to your extensions bar in the browser.
+2. Click on the icon to open pop-up window.
+3. (Optional) Configure `secret` and `api url` by interacting with the form in pop-up.
+
+   *NOTE: You have to sync new values with your `.env` file for server respectively.*
+
+4. Activate the extension with a checkbox in pop-up window.
+5. Open web page with a code snippet and highlight it to see the popover with a summary.
 
 ### Report
 

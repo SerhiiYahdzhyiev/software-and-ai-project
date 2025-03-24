@@ -42,8 +42,7 @@ app.post("/isCode", async (req, res) => {
         res.json({isCode});
     } catch (error) {
         console.error(error);
-        // TODO: Improve handling...
-        res.status(500);
+        res.status(error.status ?? 500);
         res.json({ error: String(error)});
     }
 });
@@ -54,8 +53,7 @@ app.post("/info", async (req, res) => {
         res.json(info);
     } catch (error) {
         console.error(error);
-        // TODO: Improve handling...
-        res.status(500);
+        res.status(error.status ?? 500);
         res.json({ error: String(error)});
     }
 });

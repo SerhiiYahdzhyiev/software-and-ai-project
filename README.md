@@ -66,11 +66,27 @@ In summary the steps are:
    cp .env.example .env
    ```
 
-##### Set up the Adapter
+4. Set up the Adapter
 
-*TODO: Write this subsection*
+   You can choose an adapter. Currently available:
+      - Gemini (Google) - `./server/adapter/clients/gemini.js`
+      - ChatGPT (OpenAI) - `./server/adapter/clients/openai.js`
+      - Mock (Returns harcoded values, primarily for testing) - `./server/adapter/clients/mock.js`
 
-##### Run the Server
+   To set an adapter client you need to change the following line in `./server/index.js`:
+
+   *For example for Gemini:*
+   ```javascript
+      import {client} from "./adapter/clients/gemini.js"
+   ```
+
+5. Run the Server
+
+   You can run the application server by running:
+
+   ```bash
+   npm run start
+   ```
 
 ### Usage
 

@@ -43,7 +43,8 @@ function createPopoverElement(info) {
 function getPopoverPosition() {
     const selection = window.getSelection();
 
-    const rect = selection.anchorNode.parentElement.getBoundingClientRect();
+    const rect = selection.anchorNode?.parentElement?.getBoundingClientRect();
+    if (!rect) return {x: 24, y: 24};
     const x = rect.x + window.scrollX;
     const y = rect.y 
         + window.scrollY

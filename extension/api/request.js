@@ -19,7 +19,12 @@ export async function request(path, payload) {
 
     if (response.status !== 200) {
         console.error(response);
-        throw new Error(response.statusText);
+        let text;
+        try {
+            const {message} = await response.json();
+            text = message;
+        } catch {}
+        throw new Error(text ?? response.statusText);
     }
 
     const data = await response.json();

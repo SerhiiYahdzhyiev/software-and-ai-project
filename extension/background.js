@@ -23,11 +23,16 @@ let active = false;
                             const popoverInfo =
                                     await getPopoverInfo(message.payload);
 
+                            await chrome.tabs.sendMessage(sender.tab.id, {
+                                action: "renderPopover",
+                                payload: popoverInfo,
+                            });
                         }
+                        throw new Error(res.error);
                     } catch (error) {
+                        console.error(error);
                         await chrome.tabs.sendMessage(sender.tab.id, {
                             action: "renderPopover",
-                            payload: popoverInfo,
                             payload: {general: {error: String(error)}}
                         });
                     }

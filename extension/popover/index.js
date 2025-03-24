@@ -33,7 +33,7 @@ function createPopoverElement(info) {
     el.id = CG_CONTAINER_ID;
     el.innerHTML = `
         ${CG_CLOSE_HTML}
-        ${renderGeneral(info.general)}
+        ${renderGeneral(info.general ?? {error: info.error})}
     `;
 
     el.classList.add(CG_POPOVER_CONTAINER_CLASS);
@@ -62,7 +62,7 @@ function renderGeneral(general) {
             html += renderGeneral(general[key])
         } else {
             html += `
-            <div class="${CG_ROW_CLASS}">
+            <div class="${CG_ROW_CLASS} ${key === "error" ? "cg_error" : ""}">
                 <h4 class="${CG_TITLE_CLASS}">${camelToTitle(key)}</h4>
                 <p class="${CG_VALUE_CLASS}">${general[key]}</p>
             </div>

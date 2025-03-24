@@ -3,8 +3,9 @@ import {HEADERS} from "./constants.js"
 import { getSecret } from "../storage/get-secret.js";
 
 export async function request(path, payload) {
-    // TODO: Make this configurable through popup...
-    const base = "http://localhost:4242"
+    const base =
+        (await chrome.storage.local.get())["API_URL"]
+        ?? "http://localhost:4818";
     const secret = await getSecret();
     const response = await fetch(base + path, {
         method: "POST",

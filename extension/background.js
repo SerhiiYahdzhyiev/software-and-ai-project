@@ -17,13 +17,18 @@ let active = false;
                     break;
                 case "textSelected":
                     if (!active) return;
-                    if (await isCode(message.payload)) {
-                        const popoverInfo =
-                            await getPopoverInfo(message.payload);
+                    try {
+                        const res = await isCode(message.payload);
+                        if (res.isCode) {
+                            const popoverInfo =
+                                    await getPopoverInfo(message.payload);
 
+                        }
+                    } catch (error) {
                         await chrome.tabs.sendMessage(sender.tab.id, {
                             action: "renderPopover",
                             payload: popoverInfo,
+                            payload: {general: {error: String(error)}}
                         });
                     }
                     break;

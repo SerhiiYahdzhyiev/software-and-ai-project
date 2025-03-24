@@ -22,7 +22,7 @@ function getPopoverHeight(element) {
 }
 
 function destroyPopover() {
-    const popover = document.querySelector(cssClass(CG_POPOVER_CONTAINER_CLASS));
+    const popover = document.getElementById(CG_CONTAINER_ID);
     if (popover)
         document.body.removeChild(popover);
 }
@@ -30,6 +30,7 @@ function destroyPopover() {
 function createPopoverElement(info) {
     const el = document.createElement("div");
 
+    el.id = CG_CONTAINER_ID;
     el.innerHTML = `
         ${CG_CLOSE_HTML}
         ${renderGeneral(info.general)}

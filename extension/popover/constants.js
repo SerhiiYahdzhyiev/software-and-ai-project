@@ -1,5 +1,6 @@
 // Ids
 const CG_CLOSE_ID = "cg-close";
+const CG_CONTAINER_ID = "cg-container";
 
 // HTML
 const CG_CLOSE_HTML = `

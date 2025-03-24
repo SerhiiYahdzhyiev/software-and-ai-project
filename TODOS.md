@@ -5,14 +5,10 @@
 - [ ] Fix potential bug related to rerendering of popover on selecting the
       text inside of it.
 
-- [ ] Realize minimal adapter (actually connect ot an AI part).
-
-
 ## Medium
 
 - [ ] Write report
 - [ ] Finalize README.
-- [ ] Set up github project ?
 
 
 ## Low
@@ -24,10 +20,12 @@
 ## Even Lower
 
 - [ ] Draw Low Level Diagram for the project
+- [ ] Set up github project ?
 
 
 ## Closed
 
+- [x] Realize minimal adapter (actually connect ot an AI part).
 - [x] Add priorities to TODOs
 - [x] Set up boilerplate for browser extension
 - [x] Set up boilerplate for backend/server part

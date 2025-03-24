@@ -82,6 +82,10 @@ p.cg-value {
     animation: fadeIn 0.2s ease-in-out;
 }
 
+.cg_error p {
+    color: red;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

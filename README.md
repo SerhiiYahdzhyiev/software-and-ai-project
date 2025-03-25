@@ -99,6 +99,8 @@ In summary the steps are:
 4. Activate the extension with a checkbox in pop-up window.
 5. Open web page with a code snippet and highlight it to see the popover with a summary.
 
+*NOTE: You can also watch a [video demo](#) that I'be recorded for university submission.*
+
 ### Report
 
 This repository also holds source of the project report written for the

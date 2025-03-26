@@ -1,5 +1,4 @@
 chrome.runtime.onMessage.addListener(async (message) => {
-    console.log(message);
     if (!message) return;
     switch(message.action) {
         case "renderPopover":
@@ -14,7 +13,6 @@ document.addEventListener("mouseup", async () => {
     const active = await chrome.runtime.sendMessage({
         action: "getActive"
     })
-    console.log(selection);
     if (active && selection.toString().trim()) {
         destroyPopover();
         renderPopover({general: {state: "Loading..."}});

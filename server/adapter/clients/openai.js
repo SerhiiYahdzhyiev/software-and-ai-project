@@ -16,8 +16,6 @@ export const client = {
             }],
         });
 
-        console.log(completion);
-
         // TODO: Add more reliable unpacking of the response....
         return completion.choices[0].message.content;
     }

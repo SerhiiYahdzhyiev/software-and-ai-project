@@ -5,11 +5,9 @@ let active = false;
 
 (async () => {
     chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
-        console.log(message, sender);
         try {
             switch (message.action) {
                 case "getActive":
-                    console.log("active: ", active);
                     await sendResponse(active);
                     break;
                 case "setActive":

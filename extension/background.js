@@ -27,6 +27,7 @@ let active = false;
                                 action: "renderPopover",
                                 payload: popoverInfo,
                             });
+                            return;
                         }
                         throw new Error(res.error);
                     } catch (error) {

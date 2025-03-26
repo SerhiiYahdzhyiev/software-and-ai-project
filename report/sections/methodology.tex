@@ -37,13 +37,16 @@ potential trust issues.
 Due to the time-pressure all components were implemented in plain JavaScript,
 without Typescript usage.
 
+All code implementations were realized respecting SOLID \autocite{SOLID} principles.
+
 \subsection{Extension}
 
 Extension component is responsible for tracking user's text highlighting events.
 It consists of content script, background worker and popup window.
 
 This text highlighting event capturing mechanism is realized in the content script
-using "mouseup" DOM \autocite{DOM} event and window.getSelection method.
+using "mouseup" DOM \autocite{DOM} event and window.getSelection \autocite{GS}
+method.
 
 Once the event is captured event listener checks if user selection is not empty, if
 so sends an internal message via chrome.runtime.sendMessage method to the background 
@@ -78,5 +81,36 @@ The extension's source code is structured in the following way:
 
 \subsection{Application Server}
 
+This component is realized with the help of Node.js \autocite{NODE} JavaScript
+Runtime using Express.js library for writing HTTP servers. The component is
+responsible for communications with LLM API's through the Adapter component (will
+be described in the following subsection). It is extremely simple and minimalistic.
+All code is kept in a single `index.js` file. Server exposes two endpoints: `/isCode`
+and `/info`.
+
+To run the server users are required to set up environment variables via `.env` file.
+Repository has an example `.env` file. More detailed instructions can be found in the
+README.
+
+The API keys should also be set up in the `.env` file. This is not required for
+adapter clients realized by the users (in theory they can put the api keys directly
+in the adapter client code), but we recommend to adhere to the best practices.
+
 \subsection{Adapter}
 
+The \emph{Adapter} component is a class that encapsulates all the logic related to
+composing prompts, submitting them to the LLM, process models responses,
+preparing/sanitizing the outputs that will be sent as a response to the
+\emph{Extension}.
+
+This component utilizes Dependency Inversion principle. It accepts the \emph{Client}
+object as an argument passed to the constructor. The \emph{Client} object is
+a pretty simple plain JavaScript object that has to realize \emph{getResponse}
+method. This method accepts a prompt as an argument and is responsible for handling
+the actual sending of the prompt to the LLM API and returning the model answer.
+
+All other related functionality is handled by the \emph{Adapter}. If users want to
+use the preferred LLM or API (they can even self-host a model), they need only
+implement the \emph{Client} object with one required \emph{getResponse} method, and
+then pass it on the \emph{Adapter} instantiation in the \emph{Application Server}
+`index.js` file (line:22).
